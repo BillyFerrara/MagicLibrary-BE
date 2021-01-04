@@ -46,6 +46,6 @@ class SpellbooksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def spellbook_params
-      params.require(:spellbook).permit(:title, :spells_id)
+      params.require(:spellbook).permit(:title)
     end
 end
