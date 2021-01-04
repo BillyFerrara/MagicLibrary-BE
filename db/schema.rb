@@ -14,22 +14,19 @@ ActiveRecord::Schema.define(version: 2021_01_04_182623) do
 
   create_table "spellbooks", force: :cascade do |t|
     t.string "title"
-    t.integer "spells_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["spells_id"], name: "index_spellbooks_on_spells_id"
   end
 
   create_table "spells", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.string "damage_type"
-    t.integer "spellbooks_id", null: false
+    t.integer "spellbook_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["spellbooks_id"], name: "index_spells_on_spellbooks_id"
+    t.index ["spellbook_id"], name: "index_spells_on_spellbook_id"
   end
 
-  add_foreign_key "spellbooks", "spells", column: "spells_id"
-  add_foreign_key "spells", "spellbooks", column: "spellbooks_id"
+  add_foreign_key "spells", "spellbooks"
 end

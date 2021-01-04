@@ -4,7 +4,7 @@ class CreateSpells < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :description
       t.string :damage_type
-      t.references :spellbooks, null: false, foreign_key: true
+      t.references :spellbook, null: false, foreign_key: true
 
       t.timestamps
     end
