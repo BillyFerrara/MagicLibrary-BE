@@ -24,9 +24,12 @@ ActiveRecord::Schema.define(version: 2021_01_04_182623) do
     t.string "title"
     t.string "description"
     t.string "damage_type"
+    t.integer "spellbooks_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["spellbooks_id"], name: "index_spells_on_spellbooks_id"
   end
 
   add_foreign_key "spellbooks", "spells", column: "spells_id"
+  add_foreign_key "spells", "spellbooks", column: "spellbooks_id"
 end
