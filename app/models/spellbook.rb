@@ -1,3 +1,3 @@
 class Spellbook < ApplicationRecord
-  belongs_to :spells
+  has_many :spells
 end
