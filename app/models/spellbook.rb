@@ -1,3 +1,3 @@
 class Spellbook < ApplicationRecord
-  has_many :spells
+  has_many :spells, dependent: :destroy
 end
