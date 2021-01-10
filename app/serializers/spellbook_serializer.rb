@@ -1,4 +1,3 @@
 class SpellbookSerializer < ActiveModel::Serializer
-  attributes :id, :title
-  has_many :spells
+  attributes :id, :title, :spells
 end
