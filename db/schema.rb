@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_01_04_182623) do
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index "\"spellbook_id\", \"title\"", name: "index_spellbooks_on_spellbook_id_and_title", unique: true
   end
 
   create_table "spells", force: :cascade do |t|
