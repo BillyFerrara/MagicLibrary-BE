@@ -18,9 +18,9 @@ class SpellsController < ApplicationController
     spell = Spell.new(spell_params)
 
     if spell.save
-      render json: SpellSerializer.new(spell), status: :created, location: @spell
+      render json: spell, status: :created, location: @spell
     else
-      byebug
+      
       render json: @spell.errors, status: :unprocessable_entity
     end
   end
